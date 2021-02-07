@@ -14,14 +14,14 @@ interface IRequest {
 }
 
 class AuthenticateUserService {
-    private usersRespository: IUsersRepository;
+    private usersRepository: IUsersRepository;
     private hashProvider: IHashProvider;
 
     constructor(
-        usersRespository: IUsersRepository,
+        usersRepository: IUsersRepository,
         hashProvider: IHashProvider
     ) {
-        this.usersRespository = usersRespository;
+        this.usersRepository = usersRepository;
         this.hashProvider = hashProvider;
     }
 
@@ -29,7 +29,7 @@ class AuthenticateUserService {
         email,
         password,
     }: IRequest): Promise<{ user: User; token: string }> {
-        const user = await this.usersRespository.findByEmail(email);
+        const user = await this.usersRepository.findByEmail(email);
 
         if (!user) {
             throw new AppError('User not found');

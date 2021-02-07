@@ -9,19 +9,19 @@ interface IRequest {
 }
 
 class CreateUserService {
-    private usersRespository: IUsersRepository;
-    private piusRespository: IPiusRepository;
+    private usersRepository: IUsersRepository;
+    private piusRepository: IPiusRepository;
 
     constructor(
-        usersRespository: IUsersRepository,
-        piusRespository: IPiusRepository
+        usersRepository: IUsersRepository,
+        piusRepository: IPiusRepository
     ) {
-        this.usersRespository = usersRespository;
-        this.piusRespository = piusRespository;
+        this.usersRepository = usersRepository;
+        this.piusRepository = piusRepository;
     }
 
     public async execute({ content, user_id }: IRequest): Promise<any> {
-        const user = await this.usersRespository.findById(user_id);
+        const user = await this.usersRepository.findById(user_id);
 
         if (!user) {
             throw new AppError('User not found');
@@ -31,9 +31,9 @@ class CreateUserService {
             throw new AppError('Invalid content');
         }
 
-        const piu = await this.piusRespository.create({ content, user_id });
+        const piu = await this.piusRepository.create({ content, user_id });
 
-        await this.piusRespository.save(piu);
+        await this.piusRepository.save(piu);
 
         return piu;
     }

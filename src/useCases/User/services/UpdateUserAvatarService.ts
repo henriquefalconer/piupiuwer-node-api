@@ -10,19 +10,19 @@ interface IRequest {
 }
 
 class UpdateUserAvatarService {
-    private usersRespository: IUsersRepository;
+    private usersRepository: IUsersRepository;
     private storageProvider: IStorageProvider;
 
     constructor(
-        usersRespository: IUsersRepository,
+        usersRepository: IUsersRepository,
         storageProvider: IStorageProvider
     ) {
-        this.usersRespository = usersRespository;
+        this.usersRepository = usersRepository;
         this.storageProvider = storageProvider;
     }
 
     public async execute({ filename, user_id }: IRequest): Promise<void> {
-        const user = await this.usersRespository.findById(user_id);
+        const user = await this.usersRepository.findById(user_id);
 
         if (!user) {
             await this.storageProvider.deleteTempFile(filename);
@@ -37,7 +37,7 @@ class UpdateUserAvatarService {
 
         user.avatar = filename;
 
-        await this.usersRespository.save(user);
+        await this.usersRepository.save(user);
     }
 }
 

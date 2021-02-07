@@ -10,54 +10,54 @@ interface IRequest {
 }
 
 class LikeUserService {
-    private usersRespository: IUsersRepository;
-    private piusRespository: IPiusRepository;
-    private piuLikesRespository: IPiuLikesRepository;
+    private usersRepository: IUsersRepository;
+    private piusRepository: IPiusRepository;
+    private piuLikesRepository: IPiuLikesRepository;
 
     constructor(
-        usersRespository: IUsersRepository,
-        piusRespository: IPiusRepository,
-        piuLikesRespository: IPiuLikesRepository
+        usersRepository: IUsersRepository,
+        piusRepository: IPiusRepository,
+        piuLikesRepository: IPiuLikesRepository
     ) {
-        this.usersRespository = usersRespository;
-        this.piusRespository = piusRespository;
-        this.piuLikesRespository = piuLikesRespository;
+        this.usersRepository = usersRepository;
+        this.piusRepository = piusRepository;
+        this.piuLikesRepository = piuLikesRepository;
     }
 
     public async execute({ piu_id, user_id }: IRequest): Promise<any> {
-        const user = await this.usersRespository.findById(user_id);
+        const user = await this.usersRepository.findById(user_id);
 
         if (!user) {
             throw new AppError('User not found');
         }
 
-        const piu = await this.piusRespository.findById(piu_id);
+        const piu = await this.piusRepository.findById(piu_id);
 
         if (!piu) {
             throw new AppError('Piu not found');
         }
 
-        const piuLikeExists = await this.piuLikesRespository.findByUserAndPiuIds(
+        const piuLikeExists = await this.piuLikesRepository.findByUserAndPiuIds(
             user_id,
             piu_id
         );
 
         if (piuLikeExists) {
-            await this.piuLikesRespository.delete(piuLikeExists.id);
+            await this.piuLikesRepository.delete(piuLikeExists.id);
 
             piu.likes -= 1;
         } else {
-            const piuLike = await this.piuLikesRespository.create({
+            const piuLike = await this.piuLikesRepository.create({
                 piu_id,
                 user_id,
             });
 
-            await this.piuLikesRespository.save(piuLike);
+            await this.piuLikesRepository.save(piuLike);
 
             piu.likes += 1;
         }
 
-        await this.piusRespository.save(piu);
+        await this.piusRepository.save(piu);
 
         return piu;
     }

@@ -12,14 +12,14 @@ interface IRequest {
 }
 
 class CreateUserService {
-    private usersRespository: IUsersRepository;
+    private usersRepository: IUsersRepository;
     private hashProvider: IHashProvider;
 
     constructor(
-        usersRespository: IUsersRepository,
+        usersRepository: IUsersRepository,
         hashProvider: IHashProvider
     ) {
-        this.usersRespository = usersRespository;
+        this.usersRepository = usersRepository;
         this.hashProvider = hashProvider;
     }
 
@@ -29,13 +29,13 @@ class CreateUserService {
         username,
         password,
     }: IRequest): Promise<any> {
-        const emailUsed = await this.usersRespository.findByEmail(email);
+        const emailUsed = await this.usersRepository.findByEmail(email);
 
         if (emailUsed) {
             throw new AppError('E-mail already used');
         }
 
-        const usernameUsed = await this.usersRespository.findByUsername(
+        const usernameUsed = await this.usersRepository.findByUsername(
             username
         );
 
@@ -45,14 +45,14 @@ class CreateUserService {
 
         const hashedPassword = await this.hashProvider.generateHash(password);
 
-        const user = await this.usersRespository.create({
+        const user = await this.usersRepository.create({
             name,
             username,
             email,
             password: hashedPassword,
         });
 
-        await this.usersRespository.save(user);
+        await this.usersRepository.save(user);
 
         return user;
     }

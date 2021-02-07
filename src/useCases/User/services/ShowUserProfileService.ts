@@ -9,23 +9,23 @@ interface IRequest {
 }
 
 class ShowUserProfileService {
-    private usersRespository: IUsersRepository;
+    private usersRepository: IUsersRepository;
 
-    constructor(usersRespository: IUsersRepository) {
-        this.usersRespository = usersRespository;
+    constructor(usersRepository: IUsersRepository) {
+        this.usersRepository = usersRepository;
     }
 
     public async execute({
         user_id,
         profile_user_id,
     }: IRequest): Promise<User> {
-        const user = await this.usersRespository.findById(user_id);
+        const user = await this.usersRepository.findById(user_id);
 
         if (!user) {
             throw new AppError('User not found');
         }
 
-        const profileUser = await this.usersRespository.findByIdWithRelations(
+        const profileUser = await this.usersRepository.findByIdWithRelations(
             profile_user_id
         );
 
