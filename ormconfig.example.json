@@ -12,6 +12,6 @@
         "migrationsDir": "./src/shared/database/migrations"
     },
     "entities": [
-        "./src/useCases/*/models/*.ts"
+        "./src/modules/*/models/*.ts"
     ]
 }
