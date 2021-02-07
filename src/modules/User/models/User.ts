@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
-import Piu from '../../Piu/models/Piu';
+import Piu from '@modules/Piu/models/Piu';
 
 @Entity('users')
 class User {

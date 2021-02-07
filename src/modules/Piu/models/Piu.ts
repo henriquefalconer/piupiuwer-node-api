@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
-import User from '../../User/models/User';
+import User from '@modules/User/models/User';
 
 @Entity('pius')
 class Piu {

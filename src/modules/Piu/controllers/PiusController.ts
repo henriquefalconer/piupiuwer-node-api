@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 import PiusRepository from '../repositories/Pius/PiusRepository';
 import CreatePiuService from '../services/CreatePiuService';
-import UsersRepository from '../../User/repositories/Users/UsersRepository';
+import UsersRepository from '@modules/User/repositories/Users/UsersRepository';
 
 class UsersController {
     public async create(request: Request, response: Response) {

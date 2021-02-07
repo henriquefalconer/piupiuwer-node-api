@@ -1,9 +1,9 @@
 import Router from 'express';
 import multer from 'multer';
 
-import uploadConfig from '../../../config/upload'
+import uploadConfig from '@config/upload'
 
-import ensureAuthenticated from '../../../shared/middlewares/ensureAuthenticated';
+import ensureAuthenticated from '@middlewares/ensureAuthenticated';
 
 import UsersController from '../controller/UsersController';
 import SessionsController from '../controller/SessionsController';

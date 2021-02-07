@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import UsersRepository from '../../User/repositories/Users/UsersRepository';
+import UsersRepository from '@modules/User/repositories/Users/UsersRepository';
 import PiusRepository from '../repositories/Pius/PiusRepository';
 import PiuLikesRepository from '../repositories/PiuLikes/PiuLikesRepository';
 

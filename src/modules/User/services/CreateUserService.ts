@@ -1,6 +1,6 @@
-import AppError from '../../../shared/errors/AppError';
+import AppError from '@errors/AppError';
 
-import IHashProvider from '../../../shared/providers/HashProvider/IHashProvider';
+import IHashProvider from '@providers/HashProvider/IHashProvider';
 import IUsersRepository from '../repositories/Users/IUsersRepository';
 
 interface IRequest {

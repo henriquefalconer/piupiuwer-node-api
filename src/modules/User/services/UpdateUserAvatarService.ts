@@ -1,6 +1,6 @@
-import AppError from '../../../shared/errors/AppError';
+import AppError from '@errors/AppError';
 
-import IStorageProvider from '../../../shared/providers/StorageProvider/IStorageProvider';
+import IStorageProvider from '@providers/StorageProvider/IStorageProvider';
 
 import IUsersRepository from '../repositories/Users/IUsersRepository';
 

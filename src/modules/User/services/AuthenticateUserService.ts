@@ -1,10 +1,10 @@
 import { sign } from 'jsonwebtoken';
 
-import auth from '../../../config/auth';
+import auth from '@config/auth';
 
-import AppError from '../../../shared/errors/AppError';
+import AppError from '@errors/AppError';
 
-import IHashProvider from '../../../shared/providers/HashProvider/IHashProvider';
+import IHashProvider from '@providers/HashProvider/IHashProvider';
 import User from '../models/User';
 import IUsersRepository from '../repositories/Users/IUsersRepository';
 

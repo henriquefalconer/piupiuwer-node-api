@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
 import UsersRepository from '../repositories/Users/UsersRepository';
-import HashProvider from '../../../shared/providers/HashProvider/HashProvider';
+import HashProvider from '@providers/HashProvider/HashProvider';
 
 import CreateUserService from '../services/CreateUserService';
 

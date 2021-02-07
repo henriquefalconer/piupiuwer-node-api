@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
 import UsersRepository from '../repositories/Users/UsersRepository';
-import StorageProvider from '../../../shared/providers/StorageProvider/StorageProvider';
+import StorageProvider from '@providers/StorageProvider/StorageProvider';
 
 import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
 

@@ -1,6 +1,6 @@
-import AppError from '../../../shared/errors/AppError';
+import AppError from '@errors/AppError';
 
-import IUsersRepository from '../../User/repositories/Users/IUsersRepository';
+import IUsersRepository from '@modules/User/repositories/Users/IUsersRepository';
 import IPiusRepository from '../repositories/Pius/IPiusRepository';
 
 interface IRequest {
