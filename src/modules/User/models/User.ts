@@ -18,8 +18,8 @@ class User {
     @Column()
     password: string;
 
-    // @Column()
-    // birthdate: string;
+    @Column()
+    birthdate: Date;
 
     @Column()
     avatar: string;

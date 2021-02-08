@@ -1,7 +1,9 @@
 import { Request, Response } from 'express';
 
 import UsersRepository from '../repositories/UsersRepository';
+
 import HashProvider from '@providers/HashProvider';
+import DateProvider from '@providers/DateProvider';
 
 import CreateUserService from '../services/CreateUserService';
 
@@ -17,15 +19,16 @@ class UsersController {
 
         const usersRepository = new UsersRepository();
         const hashProvider = new HashProvider();
+        const dateProvider = new DateProvider();
 
-        const createUser = new CreateUserService(usersRepository, hashProvider);
+        const createUser = new CreateUserService(usersRepository, hashProvider, dateProvider);
 
         const user = await createUser.execute({
             name,
             username,
             email,
             password,
-            // birthdate,
+            birthdate,
         });
 
         return response.json({ user });
