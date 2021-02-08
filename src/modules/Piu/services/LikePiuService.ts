@@ -1,8 +1,8 @@
 import AppError from '@errors/AppError';
 
-import IUsersRepository from '@modules/User/repositories/Users/IUsersRepository';
-import IPiusRepository from '../repositories/Pius/IPiusRepository';
-import IPiuLikesRepository from '../repositories/PiuLikes/IPiuLikesRepository';
+import IUsersRepository from '@modules/User/repositories/UsersRepository/types';
+import IPiusRepository from '../repositories/PiusRepository/types';
+import IPiuLikesRepository from '../repositories/PiuLikesRepository/types';
 
 interface IRequest {
     piu_id: string;

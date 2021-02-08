@@ -1,7 +1,7 @@
 import AppError from '@errors/AppError';
 
-import IUsersRepository from '@modules/User/repositories/Users/IUsersRepository';
-import IPiusRepository from '../repositories/Pius/IPiusRepository';
+import IUsersRepository from '@modules/User/repositories/UsersRepository/types';
+import IPiusRepository from '../repositories/PiusRepository/types';
 
 interface IRequest {
     content: string;

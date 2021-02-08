@@ -1,8 +1,8 @@
 import AppError from '@errors/AppError';
 
-import IStorageProvider from '@providers/StorageProvider/IStorageProvider';
+import IStorageProvider from '@providers/StorageProvider/types';
 
-import IUsersRepository from '../repositories/Users/IUsersRepository';
+import IUsersRepository from '../repositories/UsersRepository/types';
 
 interface IRequest {
     filename: string;

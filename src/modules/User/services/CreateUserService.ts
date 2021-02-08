@@ -1,7 +1,7 @@
 import AppError from '@errors/AppError';
 
-import IHashProvider from '@providers/HashProvider/IHashProvider';
-import IUsersRepository from '../repositories/Users/IUsersRepository';
+import IHashProvider from '@providers/HashProvider/types';
+import IUsersRepository from '../repositories/UsersRepository/types';
 
 interface IRequest {
     name: string;

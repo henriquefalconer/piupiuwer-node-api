@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import UsersRepository from '@modules/User/repositories/Users/UsersRepository';
-import PiusRepository from '../repositories/Pius/PiusRepository';
-import PiuLikesRepository from '../repositories/PiuLikes/PiuLikesRepository';
+import UsersRepository from '@modules/User/repositories/UsersRepository';
+import PiusRepository from '../repositories/PiusRepository';
+import PiuLikesRepository from '../repositories/PiuLikesRepository';
 
 import LikePiuService from '../services/LikePiuService';
 

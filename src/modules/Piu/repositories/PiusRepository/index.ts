@@ -3,7 +3,7 @@ import CreatePiuDTO from '../../dtos/CreatePiuDTO';
 
 import Piu from '../../models/Piu';
 
-import IPiusRepository from './IPiusRepository';
+import IPiusRepository from './types';
 
 class PiusRepository implements IPiusRepository {
     private ormRepository: Repository<Piu>;

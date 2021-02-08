@@ -3,7 +3,7 @@ import CreateUserDTO from '../../dtos/CreateUserDTO';
 
 import User from '../../models/User';
 
-import IUsersRepository from './IUsersRepository';
+import IUsersRepository from './types';
 
 class UsersRepository implements IUsersRepository {
     private ormRepository: Repository<User>;

@@ -1,7 +1,7 @@
 import AppError from '@errors/AppError';
 
 import User from '../models/User';
-import IUsersRepository from '../repositories/Users/IUsersRepository';
+import IUsersRepository from '../repositories/UsersRepository/types';
 
 interface IRequest {
     user_id: string;

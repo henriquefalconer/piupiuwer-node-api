@@ -3,7 +3,7 @@ import path from 'path';
 
 import uploadConfig from '@config/upload';
 
-import IStorageProvider from './IStorageProvider';
+import IStorageProvider from './types';
 
 class StorageProvider implements IStorageProvider {
     public async saveFile(filename: string): Promise<void> {

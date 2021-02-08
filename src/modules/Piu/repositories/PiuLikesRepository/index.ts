@@ -3,7 +3,7 @@ import CreatePiuLikeDTO from '../../dtos/CreatePiuLikeDTO';
 
 import PiuLike from '../../models/PiuLike';
 
-import IPiuLikesRepository from './IPiuLikesRepository';
+import IPiuLikesRepository from './types';
 
 class PiuLikesRepository implements IPiuLikesRepository {
     private ormRepository: Repository<PiuLike>;

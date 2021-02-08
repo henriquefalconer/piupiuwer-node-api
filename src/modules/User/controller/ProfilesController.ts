@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import UsersRepository from '../repositories/Users/UsersRepository';
+import UsersRepository from '../repositories/UsersRepository';
 
 import ShowUserProfileService from '../services/ShowUserProfileService';
 

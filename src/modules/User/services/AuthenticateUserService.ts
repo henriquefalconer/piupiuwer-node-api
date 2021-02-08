@@ -4,9 +4,9 @@ import auth from '@config/auth';
 
 import AppError from '@errors/AppError';
 
-import IHashProvider from '@providers/HashProvider/IHashProvider';
+import IHashProvider from '@providers/HashProvider/types';
 import User from '../models/User';
-import IUsersRepository from '../repositories/Users/IUsersRepository';
+import IUsersRepository from '../repositories/UsersRepository/types';
 
 interface IRequest {
     email: string;
