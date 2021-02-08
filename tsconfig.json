@@ -48,6 +48,7 @@
         "@errors/*": ["./shared/errors/*"],
         "@middlewares/*": ["./shared/middlewares/*"],
         "@providers/*": ["./shared/providers/*"],
+        "@database/*": ["./shared/database/*"],
         "@routes/*": ["./shared/routes/*"],
         "@config/*": ["./config/*"],
         "@modules/*": ["./modules/*"],

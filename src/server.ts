@@ -3,13 +3,16 @@ import 'dotenv/config';
 
 import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';
+
 import cors from 'cors';
 
 import router from '@routes/index.routes';
+
 import AppError from '@errors/AppError';
 import uploadConfig from '@config/upload';
 
-import './shared/database/connection';
+import '@database/connection';
+
 const app = express();
 
 app.use(cors());
